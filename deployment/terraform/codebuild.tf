@@ -134,6 +134,21 @@ resource "aws_codebuild_project" "main" {
     image           = "aws/codebuild/docker:18.09.0"
     type            = "LINUX_CONTAINER"
     privileged_mode = true
+
+    environment_variable {
+      name  = "AWS_REGION"
+      value = var.region
+    }
+
+    environment_variable {
+      name  = "IMAGE_TAG"
+      value = var.env
+    }
+
+    environment_variable {
+      name  = "IMAGE_REPO_URL"
+      value = aws_ecr_repository.demo.repository_url
+    }
   }
 
   logs_config {
