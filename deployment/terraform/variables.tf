@@ -49,3 +49,15 @@ variable "desired_task_count" {
 variable "domain" {
   default = "david74.dev"
 }
+
+variable "github_owner" {
+  default = "david7482"
+}
+
+variable "github_repo" {
+  default = "terraform-aws-ecs-fargate-codepipeline-demo"
+}
+
+variable "github_token" {
+  default = ""
+}
